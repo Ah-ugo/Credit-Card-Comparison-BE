@@ -1,12 +1,9 @@
 {
-  "version": 1,
+  "version": 2,
   "builds": [
     {
       "src": "main.py",
-      "use": "@vercel/python",
-      "config": {
-        "maxLambdaSize": "50mb"
-      }
+      "use": "@vercel/python"
     }
   ],
   "routes": [
@@ -14,19 +11,5 @@
       "src": "/(.*)",
       "dest": "main.py"
     }
-  ],
-  "functions": {
-    "main.py": {
-      "maxDuration": 30,
-      "memory": 1024
-    }
-  },
-  "crons": [],
-  "outputDirectory": "vercel/output",
-  "env": {
-    "PYTHONPATH": "./"
-  },
-  "cleanUrls": true,
-  "trailingSlash": false,
-  "framework": "fastapi"
+  ]
 }
